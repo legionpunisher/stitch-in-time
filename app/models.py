@@ -5,7 +5,7 @@ from . import login_manager
 from datetime import datetime
 #...
 
-@login_manager.user_loader
+# @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
@@ -20,7 +20,7 @@ class User(UserMixin,db.Model):
     pitch = db.relationship('Pitches', backref='author', lazy='dynamic')
     comments = db.relationship('Comments', backref='author', lazy='dynamic')
 
-     @property
+    @property
     def password(self):
         raise AttributeError('You cannnot read the password attribute')
 
@@ -34,7 +34,7 @@ class User(UserMixin,db.Model):
     def __repr__(self):
         return f'Author: {self.author}'
 
-    class Pitches(db.Model):
+class Pitches(db.Model):
     __tablename__= 'pitches'
     id = db.Column(db.Integer,primary_key = True)
     title = db.Column(db.String(255))
