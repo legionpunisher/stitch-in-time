@@ -1,13 +1,17 @@
 {% extends 'base.html'%} {% import "bootstrap/wtf.html" as wtf %} {% block content %}
 <br>
 <br>
-<div class="container">
-    <br>
-    <br> {{ wtf.quick_form(pitch_entry) }}
+
+<body style="background-repeat: no-repeat; background-position:auto;background-size: cover; background-image: url(../static/css/photos/photo.jpeg)">
 
 
-</div>
+    <div class="container">
+        <br>
+        <br> {{ wtf.quick_form(pitch_entry) }}
 
 
+    </div>
 
+
+</body>
 {% endblock %}

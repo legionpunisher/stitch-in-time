@@ -7,16 +7,17 @@ from .. import db,photos
 from .forms import PitchForm,CommentForm, UpdateProfile
 
 
+
 @main.route('/')
 def index():
+    
     '''
     my index page
     return
     '''
     message= "Hello"
-    title= 'Pitch It Ip!'
+    title= 'PITCH WORLD!'    
     return render_template('index.html', message=message,title=title)
-
 @main.route('/pitch/', methods = ['GET','POST'])
 @login_required
 def new_pitch():
